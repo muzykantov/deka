@@ -1,0 +1,62 @@
+/* ===== DEKA skinali try-on (theme-aware) ===== */
+.sk { max-width: 1100px; margin: 0 auto; color: var(--text); }
+.sk h1 { font-size: clamp(24px, 3.4vw, 38px); margin: 0 0 6px; font-family: var(--font-display); }
+.sk .hint { color: var(--muted); margin: 0 0 16px; }
+.sk-stage { max-width: 100%; margin: 0 auto; }
+#skinali { position: relative; max-width: 1100px; margin: 0 auto; }
+
+.sk-pickers { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; padding: 12px 12px 0; }
+.sk-pickers p { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-align: center; }
+.swatches { display: flex; flex-wrap: wrap; gap: 3px; max-width: 240px; }
+.swatches label { cursor: pointer; }
+.swatches input { display: none; }
+.swatches img { width: 24px; height: 24px; display: block; border: 2px solid var(--border); border-radius: 4px; background: var(--surface); }
+.swatches input:checked + img { border-color: var(--accent); box-shadow: 0 0 4px rgba(0, 0, 0, .35); }
+.sk-light { text-align: center; padding: 14px 0 0; }
+.sk-light label { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; color: var(--text); font-weight: 600; }
+.sk-light input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent); }
+
+.preview-fit { position: relative; max-width: 700px; margin: 12px auto 0; overflow: hidden; }
+.main-image { position: relative; width: 700px; height: 466px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; transform-origin: top left; }
+.main-image > div { position: absolute; inset: 0; }
+.main-image img { display: block; max-width: none; }
+.main-image .light { visibility: hidden; z-index: 5999; }
+.main-image .top { z-index: 4999; }
+.main-image .compt { z-index: 3999; }
+.main-image .bottom { z-index: 2999; }
+.main-image .fartuk { inset: auto; top: 150px; left: 93px; z-index: 299; }
+.main-image .fartuk img { height: 139px; width: auto; }
+
+.sk-tabs { border: 1px solid var(--border); border-top: 0; border-radius: 0 0 12px 12px; background: var(--surface); }
+.sk-tabs__cap { display: flex; flex-wrap: wrap; }
+.sk-tabs__cap button { flex: 1; min-width: 140px; padding: 12px; border: 0; background: var(--surface-2); cursor: pointer; font: inherit; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; }
+.sk-tabs__cap button.active { background: var(--surface); color: var(--text); border-bottom-color: var(--accent); }
+.sk-tab { display: none; padding: 14px; }
+.sk-tab.active { display: block; }
+
+.catbar { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; }
+.catbar a { flex: 0 0 auto; padding: 7px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text); font-size: 13px; white-space: nowrap; }
+.catbar a.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.list { display: flex; flex-wrap: wrap; gap: 8px; max-height: 420px; overflow: auto; padding: 8px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; margin-top: 8px; }
+.list .it { cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 3px; background: var(--surface); }
+.list .it img { display: block; height: 70px; width: auto; }
+.list .it.sel { border-color: var(--accent); }
+.list .it .c { font-size: 11px; text-align: center; color: var(--muted); margin-top: 2px; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.list .empty, .list .loading { color: var(--muted); padding: 12px; }
+
+.solids { display: flex; flex-wrap: wrap; gap: 3px; }
+.list-head { margin: 8px 0 0; font-weight: 600; }
+
+.sk-price { margin-top: 14px; padding: 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2); }
+.sk-price .row { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: end; }
+.sk-price label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.sk-price input[type=number] { width: 110px; padding: 9px 11px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); }
+.sk-price .out { font-family: var(--font-display); font-size: 24px; font-weight: 700; }
+.sk-price .note { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+
+@media (max-width: 720px) {
+  .sk-pickers { gap: 10px; }
+  .list .it img { height: 60px; }
+  .sk-tabs__cap button { min-width: 0; flex: 1 1 auto; font-size: 13px; padding: 10px 8px; }
+}
